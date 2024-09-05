@@ -1,0 +1,17 @@
+- name: Mysql tier
+  hosts: mysql
+  become: yes
+  tasks:
+  - name: Mysql installation
+    ansible.builtin.package:
+      name: mysql-server
+      state: present
+
+  - name: Mysql starting
+    ansible.builtin.service:
+      name: mysql-server
+      state: started
+      enable: yes
+  
+  
+  
