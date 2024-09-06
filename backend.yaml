@@ -17,6 +17,6 @@
     
     - name: nodejs enabling
       ansible.builtin.service:
-        name: nodejs-20
+        name: nodejs:20
         state: started
         enabled: yes
