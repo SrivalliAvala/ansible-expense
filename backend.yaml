@@ -1,0 +1,22 @@
+- name: backend
+  hosts: backend
+  become: yes
+  tasks:
+    - name: Remove default nodejs package
+      ansible.builtin.dnf:
+        name: nodejs
+        state: absent
+
+    - name: nodejs installation
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
+      loop:
+      - nodejs
+      - mysql
+    
+    - name: nodejs enabling
+      ansible.builtin.service:
+        name: nodejs-20
+        state: started
+        enabled: yes
