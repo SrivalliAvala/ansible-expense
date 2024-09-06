@@ -1,6 +1,9 @@
 - name: Mysql tier
   hosts: mysql
   become: yes
+  vars:   
+    login_host: mysql.dev-ops81s.online
+    mysql_root_password: ExpenseApp@1
   tasks:
   - name: Mysql installation
     ansible.builtin.package:
