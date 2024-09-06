@@ -12,7 +12,7 @@
         name: "{{ item }}"
         state: present
       loop:
-      - nodejs
+      - nodejs:20
       - mysql
     
     - name: nodejs enabling
